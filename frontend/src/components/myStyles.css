@@ -8,7 +8,7 @@
 
 .sidebar-container {
   flex: 0.3;
-  padding: 1rem 0.5rem;
+  padding: 0 0.5rem;
 }
 
 .workarea-container {
@@ -17,6 +17,7 @@
 }
 
 .sb-header {
+  margin-top: 1rem;
   background-color: #fff;
   padding: 1rem;
   border-radius: 2rem;
@@ -26,6 +27,99 @@
     width: 5rem;
     &:first-child {
       margin-right: auto;
+    }
+  }
+}
+.sb-search {
+  background-color: #fff;
+  border-radius: 2rem;
+  margin-top: 2rem;
+  padding: 2rem 1.5rem;
+  display: flex;
+  align-items: center;
+  input {
+    border: none;
+    font-size: 1.8rem;
+    outline: none;
+    padding: 0 2rem;
+    width: 100%;
+  }
+}
+.sb-conversations {
+  background-color: #fff;
+  border-radius: 2rem;
+  margin-top: 2rem;
+  padding: 2rem 1.5rem;
+  height: 77%;
+  overflow: hidden;
+  .conversations-heading {
+    font-size: 2.6rem;
+    text-transform: uppercase;
+    text-align: center;
+    font-family: "Poppins", sans-serif;
+    position: relative;
+    margin-bottom: 1rem;
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: -10%;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: royalblue;
+      height: 0.1rem;
+      width: 30%;
+      border-radius: 1rem;
+    }
+  }
+  ul.conversations-lists {
+    list-style: none;
+    overflow-y: scroll;
+    height: 100%;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+    li.conversations-list-item {
+      margin: 2.5rem 0;
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      position: relative;
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: -10%;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: #8b8589;
+        height: 0.1rem;
+        width: 50%;
+        border-radius: 1rem;
+      }
+      span.userName {
+        font-family: "Poppins", sans-serif;
+        font-weight: 500;
+        font-size: 2rem;
+      }
+      p {
+        font-size: 1.6rem;
+        font-weight: 300;
+      }
+      p.unreed {
+        font-weight: 500 !important;
+      }
+
+      &.unreed::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        right: 1rem;
+        transform: translateY(-50%);
+        background-color: royalblue;
+        height: 1.5rem;
+        width: 1.5rem;
+        border-radius: 50%;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+      }
     }
   }
 }
