@@ -26,4 +26,8 @@ Start the server
   npm run dev
 ```
 
+<br/>
+<br/>
+<center>
 ![Secure-Chat logo](./frontend/public/images/secure_chat_logo.png)
+</center>
