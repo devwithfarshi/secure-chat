@@ -1,0 +1,31 @@
+.mainContainer {
+  background-color: #d3d8e5;
+  height: 90vh;
+  width: 90vw;
+  display: flex;
+  border-radius: 2rem;
+}
+
+.sidebar-container {
+  flex: 0.3;
+  padding: 1rem 0.5rem;
+}
+
+.workarea-container {
+  border: 0.5rem solid #a0785a;
+  flex: 0.7;
+}
+
+.sb-header {
+  background-color: #fff;
+  padding: 1rem;
+  border-radius: 2rem;
+  display: flex;
+  button {
+    height: 5rem;
+    width: 5rem;
+    &:first-child {
+      margin-right: auto;
+    }
+  }
+}

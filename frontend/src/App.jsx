@@ -1,8 +1,10 @@
+import "./App.css";
+import MainContainer from "./components/MainContainer";
 function App() {
   return (
-    <>
-      <h1>Chat APP</h1>
-    </>
+    <div className="App">
+      <MainContainer />
+    </div>
   );
 }
 
