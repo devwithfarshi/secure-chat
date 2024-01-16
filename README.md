@@ -28,6 +28,6 @@ Start the server
 
 <br/>
 <br/>
-<center>
+<p align="center">
 ![Secure-Chat logo](./frontend/public/images/secure_chat_logo.png)
-</center>
+</p>
