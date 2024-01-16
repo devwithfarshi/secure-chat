@@ -25,3 +25,5 @@ Start the server
 ```bash
   npm run dev
 ```
+
+![Secure-Chat logo](./frontend/public/images/secure_chat_logo.png)
