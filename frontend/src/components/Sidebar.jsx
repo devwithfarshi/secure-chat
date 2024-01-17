@@ -6,6 +6,7 @@ import {
   Search,
 } from "@mui/icons-material";
 import { Avatar, Badge, IconButton, styled } from "@mui/material";
+import ConversationsItem from "./ConversationsItem";
 const Sidebar = () => {
   const StyledBadge = styled(Badge)(({ theme }) => ({
     "& .MuiBadge-badge": {
@@ -53,21 +54,7 @@ const Sidebar = () => {
       {/*============ Siderbar Conversastins Start ========= */}
       <div className="sb-conversations">
         <h4 className="conversations-heading">Your connections</h4>
-        <ul className="conversations-lists">
-          {/* <li className="conversations-list-item"> */}
-          <li className="conversations-list-item unreed">
-            <Avatar
-              alt="user name"
-              src="https://res.cloudinary.com/dc2lde0cr/image/upload/v1704392044/portfolio/h495i3hfsbb3qrukpe5a.png"
-              sx={{ width: 56, height: 56 }}
-            />
-            <div className="info">
-              <span className="userName">MD Salman Farshi</span>
-              {/* <p>You : hello salman</p> */}
-              <p className="unreed">You : hello salman</p>
-            </div>
-          </li>
-        </ul>
+        <ConversationsItem />
       </div>
       {/*============ Siderbar Conversastins End ========= */}
     </div>

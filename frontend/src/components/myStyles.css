@@ -6,16 +6,16 @@
   border-radius: 2rem;
 }
 
-.sidebar-container {
-  flex: 0.3;
-  padding: 0 0.5rem;
-}
-
 .workarea-container {
   border: 0.5rem solid #a0785a;
   flex: 0.7;
 }
-
+.sidebar-container {
+  flex: 0.3;
+  padding: 0 0.5rem;
+  display: flex;
+  flex-direction: column;
+}
 .sb-header {
   margin-top: 1rem;
   background-color: #fff;
@@ -46,11 +46,11 @@
   }
 }
 .sb-conversations {
+  flex: 1;
   background-color: #fff;
   border-radius: 2rem;
   margin-top: 2rem;
   padding: 2rem 1.5rem;
-  height: 77%;
   overflow: hidden;
   .conversations-heading {
     font-size: 2.6rem;
@@ -87,12 +87,12 @@
       &::after {
         content: "";
         position: absolute;
-        bottom: -10%;
+        bottom: -20%;
         left: 50%;
         transform: translateX(-50%);
         background-color: #8b8589;
         height: 0.1rem;
-        width: 50%;
+        width: 100%;
         border-radius: 1rem;
       }
       span.userName {
@@ -104,7 +104,7 @@
         font-size: 1.6rem;
         font-weight: 300;
       }
-      p.unreed {
+      &.unreed p {
         font-weight: 500 !important;
       }
 
