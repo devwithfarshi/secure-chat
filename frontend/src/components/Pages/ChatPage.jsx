@@ -76,10 +76,14 @@ const ChatPage = () => {
 
 export default ChatPage;
 const Wrapper = styled.div`
+  padding: 1rem 0.5rem;
+  flex: 1;
   height: 100%;
   display: flex;
   flex-direction: column;
   .chat-header {
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+      rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
     background-color: #fff;
     padding: 1rem;
     border-radius: 2rem;
