@@ -6,29 +6,19 @@
   border-radius: 2rem;
 }
 
-.workarea-container {
-  border: 0.5rem solid #a0785a;
-  flex: 0.7;
-}
 .sidebar-container {
-  flex: 0.3;
-  padding: 0 0.5rem;
+  min-width: 50rem;
+  padding: 1rem 0.5rem;
   display: flex;
   flex-direction: column;
 }
 .sb-header {
-  margin-top: 1rem;
   background-color: #fff;
-  padding: 1rem;
   border-radius: 2rem;
   display: flex;
-  button {
-    height: 5rem;
-    width: 5rem;
-    &:first-child {
-      margin-right: auto;
-    }
-  }
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
 }
 .sb-search {
   background-color: #fff;
@@ -122,4 +112,10 @@
       }
     }
   }
+}
+
+/* ============= WorkArea Css ================== */
+.workarea-container {
+  padding: 1rem 0.5rem;
+  flex: 1;
 }

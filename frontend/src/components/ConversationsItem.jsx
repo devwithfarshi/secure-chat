@@ -4,9 +4,9 @@ import { useState } from "react";
 const ConversationsItem = () => {
   const [conversations, setConversations] = useState([
     {
-      name: "Sanuar vai",
+      name: "Shariful islamn",
       lastMessage: {
-        message: "Okay bro...",
+        message: "Accha...",
         read: true,
       },
       image:
@@ -15,7 +15,8 @@ const ConversationsItem = () => {
     {
       name: "MD Salman Farshi",
       lastMessage: {
-        message: "no no",
+        message:
+          "pore vai ar kicu to janailen na..ekn ki korbo? bolen kicu nahole to somossay porbo!",
         read: false,
       },
       image:
@@ -45,6 +46,7 @@ const ConversationsItem = () => {
           <>
             {/* <li className="conversations-list-item"> */}
             <li
+              key={v.name}
               className={`conversations-list-item ${
                 !v.lastMessage.read && "unreed"
               } `}
@@ -52,11 +54,16 @@ const ConversationsItem = () => {
               <Avatar
                 alt={v.name}
                 src={v.image || v.name[0]}
-                sx={{ width: 56, height: 56 }}
+                sx={{ width: 50, height: 50 }}
               />
               <div className="info">
                 <span className="userName">{v.name}</span>
-                <p>{v.lastMessage.message}</p>
+
+                {v.lastMessage.message.length > 45 ? (
+                  <p>{v.lastMessage.message.slice(0, 45)}...</p>
+                ) : (
+                  <p>{v.lastMessage.message}</p>
+                )}
               </div>
             </li>
           </>
