@@ -1,7 +1,9 @@
 import { Avatar } from "@mui/material";
 import { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 
 const ConversationsItem = () => {
+  const navigate = useNavigate();
   const [conversations, setConversations] = useState([
     {
       name: "Shariful islamn",
@@ -46,6 +48,7 @@ const ConversationsItem = () => {
           <>
             {/* <li className="conversations-list-item"> */}
             <li
+              onClick={() => navigate("/app/chat")}
               key={v.name}
               className={`conversations-list-item ${
                 !v.lastMessage.read && "unreed"

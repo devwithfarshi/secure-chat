@@ -1,9 +1,9 @@
 import styled from "styled-components";
-
+import logo from "../../../public/images/secure_chat_logo.png";
 const WellcomePage = () => {
   return (
     <Wrapper>
-      <img src="./images/secure_chat_logo.png" alt="Sec" />
+      <img src={logo} alt="logo" />
       <h4>Start conversations with your friends!</h4>
     </Wrapper>
   );

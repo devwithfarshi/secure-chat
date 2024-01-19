@@ -4,17 +4,17 @@ import React from "react";
 import styled from "styled-components";
 import logo from "../../../public/images/secure_chat_logo.png";
 
-const OnlineUsers = () => {
+const OnlineGroups = () => {
   return (
     <Wrapper>
       <div className="online-users-header">
         <img alt="logo" src={logo} />
-        <h2>Online Users</h2>
+        <h2>Available Groups</h2>
       </div>
       <div className="online-users-search">
         <input
           type="text"
-          name="onlineUsersSearch"
+          name="onlineGroupsSearch"
           placeholder="Search from online users"
         />
         <IconButton>
@@ -27,7 +27,7 @@ const OnlineUsers = () => {
             src="https://media-ccu1-1.cdn.whatsapp.net/v/t61.24694-24/414655913_687288853513928_7511808843410882816_n.jpg?ccb=11-4&oh=01_AdQyUaLJNXr7ipjA7vNgZjjs1XpdaHeG6v90yjMVKQjgSw&oe=65B38E98&_nc_sid=e6ed6c&_nc_cat=103"
             alt="user name"
           />
-          <span>Sanuyar vai</span>
+          <span>CIT MERN 2308</span>
           <IconButton>
             <Message sx={{ width: 36, height: 36, color: "royalblue" }} />
           </IconButton>
@@ -37,7 +37,7 @@ const OnlineUsers = () => {
   );
 };
 
-export default OnlineUsers;
+export default OnlineGroups;
 const Wrapper = styled.div`
   padding: 1rem;
   flex: 1;

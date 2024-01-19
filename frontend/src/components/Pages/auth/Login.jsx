@@ -18,7 +18,9 @@ const Login = () => {
           <Button className="auth-button" variant="contained">
             Login
           </Button>
-          <p>Haven't account? Create an account</p>
+          <p>
+            Haven't account? <Link to={"/signup"}>Create an account.</Link>
+          </p>
         </div>
       </LoginWrapper>
     </Wrapper>
@@ -78,5 +80,9 @@ const LoginWrapper = styled.div`
     font-size: 1.4rem;
     text-align: center;
     margin-top: 1rem;
+    a {
+      text-decoration: underline;
+      color: black;
+    }
   }
 `;

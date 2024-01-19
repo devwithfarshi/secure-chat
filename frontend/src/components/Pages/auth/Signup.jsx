@@ -21,11 +21,12 @@ const SignUp = () => {
             variant="outlined"
             type="password"
           />
-
           <Button className="auth-button" variant="contained">
             SignUp
           </Button>
-          <p>Allready Have an account? Login</p>
+          <p>
+            Allready Have an account? <Link to={"/"}>Login.</Link>
+          </p>
         </div>
       </SignUpWrapper>
     </Wrapper>
@@ -84,5 +85,9 @@ const SignUpWrapper = styled.div`
     font-size: 1.4rem;
     text-align: center;
     margin-top: 1rem;
+    a {
+      text-decoration: underline;
+      color: black;
+    }
   }
 `;

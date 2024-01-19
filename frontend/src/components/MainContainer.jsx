@@ -7,14 +7,18 @@ import CreateGroup from "./Pages/CreateGroup";
 import Login from "./Pages/auth/Login";
 import SignUp from "./Pages/auth/Signup";
 import OnlineUsers from "./Pages/OnlineUsers";
+import OnlineGroups from "./Pages/OnlineGroups";
+import { Outlet } from "react-router-dom";
 const MainContainer = () => {
   return (
     <main className="mainContainer">
       <Sidebar />
+      <Outlet />
       {/* <WellcomePage /> */}
       {/* <ChatPage /> */}
       {/* <CreateGroup /> */}
-      <OnlineUsers />
+      {/* <OnlineUsers /> */}
+      {/* <OnlineGroups /> */}
     </main>
   );
 };

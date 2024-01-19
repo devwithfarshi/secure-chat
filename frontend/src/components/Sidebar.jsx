@@ -18,6 +18,7 @@ import {
 } from "@mui/material";
 import ConversationsItem from "./ConversationsItem";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 const Sidebar = () => {
   const StyledBadge = styled(Badge)(({ theme }) => ({
     "& .MuiBadge-badge": {
@@ -107,23 +108,30 @@ const Sidebar = () => {
         {/* End profile pictuire */}
 
         <div className="right_action_btn">
-          <Tooltip title="Your Groups">
-            <IconButton>
-              <Group sx={{ width: 36, height: 36, color: "black" }} />
-            </IconButton>
-          </Tooltip>
-          <Tooltip title="Create a Group">
-            <IconButton>
-              <Add sx={{ width: 36, height: 36, color: "black" }} />
-            </IconButton>
-          </Tooltip>
-          <Tooltip title="Online Friends">
-            <IconButton>
-              <OnlinePrediction
-                sx={{ width: 36, height: 36, color: "black" }}
-              />
-            </IconButton>
-          </Tooltip>
+          <Link to={"/app/create-group"}>
+            <Tooltip title="Create a Group">
+              <IconButton>
+                <Add sx={{ width: 36, height: 36, color: "black" }} />
+              </IconButton>
+            </Tooltip>
+          </Link>
+          <Link to={"/app/groups"}>
+            <Tooltip title="Your Groups">
+              <IconButton>
+                <Group sx={{ width: 36, height: 36, color: "black" }} />
+              </IconButton>
+            </Tooltip>
+          </Link>
+
+          <Link to={"/app/users"}>
+            <Tooltip title="Online Friends">
+              <IconButton>
+                <OnlinePrediction
+                  sx={{ width: 36, height: 36, color: "black" }}
+                />
+              </IconButton>
+            </Tooltip>
+          </Link>
           <Tooltip title="Dark theme">
             <IconButton>
               <Contrast sx={{ width: 36, height: 36, color: "black" }} />
