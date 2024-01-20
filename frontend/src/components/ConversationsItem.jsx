@@ -1,7 +1,7 @@
 import { Avatar } from "@mui/material";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-
+import { motion } from "framer-motion";
 const ConversationsItem = () => {
   const navigate = useNavigate();
   const [conversations, setConversations] = useState([
@@ -47,8 +47,13 @@ const ConversationsItem = () => {
         {conversations.map((v) => (
           <>
             {/* <li className="conversations-list-item"> */}
-            <li
-              onClick={() => navigate("/app/chat")}
+            <motion.li
+              whileTap={{
+                scale: 0.98,
+              }}
+              onClick={() => {
+                navigate("/app/chat");
+              }}
               key={v.name}
               className={`conversations-list-item ${
                 !v.lastMessage.read && "unreed"
@@ -68,7 +73,7 @@ const ConversationsItem = () => {
                   <p>{v.lastMessage.message}</p>
                 )}
               </div>
-            </li>
+            </motion.li>
           </>
         ))}
       </ul>

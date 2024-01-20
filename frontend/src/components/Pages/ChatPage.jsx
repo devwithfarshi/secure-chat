@@ -1,4 +1,4 @@
-import { MenuOpen, MoreVert } from "@mui/icons-material";
+import { ArrowBack, MenuOpen, MoreVert } from "@mui/icons-material";
 import { Avatar, IconButton, Menu, MenuItem } from "@mui/material";
 import styled from "styled-components";
 import ChatArea from "../ChatArea";
@@ -17,6 +17,9 @@ const ChatPage = () => {
   return (
     <Wrapper>
       <header className="chat-header">
+        <IconButton className="chat-back-icon" sx={{ marginRight: "1rem" }}>
+          <ArrowBack sx={{ width: 36, height: 36 }} />
+        </IconButton>
         <Avatar
           alt="user name"
           src="https://res.cloudinary.com/dc2lde0cr/image/upload/v1704392044/portfolio/h495i3hfsbb3qrukpe5a.png"
@@ -77,8 +80,8 @@ const ChatPage = () => {
 export default ChatPage;
 const Wrapper = styled.div`
   padding: 1rem 0.5rem;
-  flex: 1;
   height: 100%;
+  flex: 1;
   display: flex;
   flex-direction: column;
   .chat-header {
@@ -87,9 +90,12 @@ const Wrapper = styled.div`
     background-color: #fff;
     padding: 1rem;
     border-radius: 2rem;
-    display: grid;
-    grid-template-columns: auto 1fr auto;
-    align-items: center;
+    /* display: grid;
+    grid-template-columns: auto 1fr auto; */
+    display: flex;
+    #long-button {
+      margin-left: auto;
+    }
     .user-info {
       margin-left: 2rem;
 
@@ -103,6 +109,13 @@ const Wrapper = styled.div`
         font-size: 1.2rem;
         font-weight: 600;
         color: royalblue;
+      }
+    }
+
+    .chat-back-icon {
+      display: none;
+      @media (max-width: 768px) {
+        display: block;
       }
     }
   }

@@ -33,6 +33,9 @@ const ChatAreaWrapper = styled.ul`
   margin: 2rem 0;
   padding: 1rem;
   flex: 1;
+  @media (max-width: 768px) {
+    flex: 0.9;
+  }
   overflow: scroll;
   &::-webkit-scrollbar {
     display: none;

@@ -12,9 +12,6 @@ import PageNotFound from "./components/Pages/PageNotFound";
 function App() {
   return (
     <div className="App">
-      {/* <MainContainer /> */}
-      {/* <SignUp /> */}
-      {/* <Login /> */}
       <Routes>
         <Route path="/" element={<Login />} />
         <Route path="/signup" element={<SignUp />} />

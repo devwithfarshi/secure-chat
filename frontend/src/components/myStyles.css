@@ -7,10 +7,10 @@
 }
 
 .sidebar-container {
-  min-width: 50rem;
   padding: 1rem 0.5rem;
   display: flex;
   flex-direction: column;
+  height: 100%;
 }
 .sb-header {
   background-color: #fff;
@@ -127,3 +127,11 @@
 }
 
 /* ============= WorkArea Css ================== */
+
+@media (max-width: 768px) {
+  .mainContainer {
+    height: 100vh;
+    width: 100vw;
+    display: block;
+  }
+}

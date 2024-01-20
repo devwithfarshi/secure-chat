@@ -1,6 +1,7 @@
 import { Avatar } from "@mui/material";
 import React from "react";
 import styled from "styled-components";
+import { motion } from "framer-motion";
 
 const MessagesListItem = ({ image, name, message, me }) => {
   return (
@@ -24,6 +25,9 @@ const Lists = styled.li`
   margin: 2rem 0;
   display: flex;
   gap: 2rem;
+  @media (max-width: 768px) {
+    gap: 1rem;
+  }
   &.right {
     flex-direction: row-reverse;
     .info {

@@ -42,12 +42,19 @@ const ChatInputWrapper = styled.div`
   padding: 1rem;
   display: flex;
   justify-content: space-around;
-
+  align-items: center;
   input {
     font-size: 1.6rem;
+    @media (max-width: 768px) {
+      font-size: 1.4rem;
+    }
   }
   .send-btn {
     font-size: 2rem;
     background-color: royalblue;
+    @media (max-width: 768px) {
+      font-size: 1.6rem;
+      padding: 0.5rem 1rem;
+    }
   }
 `;
