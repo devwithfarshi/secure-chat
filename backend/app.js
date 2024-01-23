@@ -1,9 +1,14 @@
 import express from "express";
 import dotenv from "dotenv";
+import { getIPAddress } from "./config/getIpAddress.js";
+import colors from "colors";
+import { mongoDB_connect } from "./config/mongoDB.js";
 
 dotenv.config();
 const app = express();
 const port = process.env.PORT || 5000;
+
+mongoDB_connect(process.env.MONGODB_URI);
 
 app.get("/", (req, res) => [
   res.send({
@@ -13,5 +18,10 @@ app.get("/", (req, res) => [
 ]);
 
 app.listen(port, () => {
-  console.log(`your server runing on http://127.0.0.1:${port}`);
+  console.log(
+    `Your server runing on : 
+  Local : http://127.0.0.1:${port}
+  Network : http://${getIPAddress()}:${port}
+  `.bold
+  );
 });
