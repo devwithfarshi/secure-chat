@@ -12,11 +12,27 @@ const SignUp = () => {
       <SignUpWrapper>
         <div className="box">
           <h2>Create your account</h2>
-          <TextField label="Name" variant="outlined" type="text" />
-          <TextField label="Username  " variant="outlined" type="text" />
-          <TextField label="Email" variant="outlined" type="text" />
-          <TextField label="Password" variant="outlined" type="password" />
+          <TextField name="name" label="Name" variant="outlined" type="text" />
           <TextField
+            name="username"
+            label="Username"
+            variant="outlined"
+            type="text"
+          />
+          <TextField
+            name="email"
+            label="Email"
+            variant="outlined"
+            type="text"
+          />
+          <TextField
+            name="password"
+            label="Password"
+            variant="outlined"
+            type="password"
+          />
+          <TextField
+            name="c-password"
             label="Confrim Password"
             variant="outlined"
             type="password"
