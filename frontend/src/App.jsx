@@ -9,6 +9,8 @@ import OnlineUsers from "./components/Pages/OnlineUsers";
 import OnlineGroups from "./components/Pages/OnlineGroups";
 import CreateGroup from "./components/Pages/CreateGroup";
 import PageNotFound from "./components/Pages/PageNotFound";
+import { useEffect } from "react";
+
 function App() {
   return (
     <div className="App">

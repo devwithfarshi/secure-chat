@@ -1,3 +1,4 @@
+import { generateToken } from "../config/token.js";
 import User from "../models/userModel.js";
 import bcrypt, { hash } from "bcrypt";
 export const registerController = async (req, res) => {
@@ -47,7 +48,16 @@ export const registerController = async (req, res) => {
       user
         .save()
         .then((user) => {
-          res.status(200).send({ user });
+          res.status(201).send({
+            message: "Account create successfully",
+            success: true,
+            user: {
+              _id: user._id,
+              name: user.name,
+              email: user.email,
+              username: user.username,
+            },
+          });
         })
         .catch((err) => console.log({ err }));
     });
@@ -55,4 +65,60 @@ export const registerController = async (req, res) => {
     console.log(`Register error -> ${error}`);
   }
 };
-export const loginController = async (req, res) => {};
+
+//login handler
+export const loginController = async (req, res) => {
+  const { username, password } = req.body;
+
+  if (!username || !password) {
+    res.status(406).send({
+      message: "All the fields are required",
+      success: false,
+    });
+    return;
+  }
+  try {
+    //Find the user
+    const user = await User.findOne({
+      $or: [{ email: username }, { username }],
+    });
+    if (!user) {
+      res.status(401).send({
+        message: "Invalid email or password",
+        success: false,
+      });
+      return;
+    }
+    //password check match or not!
+    const matchPassword = await bcrypt.compare(password, user.password);
+    if (!matchPassword) {
+      res.status(401).send({
+        message: "Invalid email or password",
+        success: false,
+      });
+      return;
+    }
+
+    res.status(201).send({
+      message: "Login successfully",
+      success: true,
+      user: {
+        _id: user._id,
+        name: user.name,
+        email: user.email,
+        username: user.username,
+      },
+
+      token: generateToken(user._id),
+    });
+  } catch (error) {
+    console.log(`login error --> ${error}`);
+  }
+};
+
+// get all users
+export const getAllUsers = async (req, res) => {
+  User.find().then((users) => {
+    res.status(200).send(users);
+  });
+};

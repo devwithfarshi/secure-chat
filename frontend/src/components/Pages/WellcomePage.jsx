@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import logo from "../../../public/images/secure_chat_logo.png";
+import logo from "/public/images/secure_chat_logo.png";
 const WellcomePage = () => {
   return (
     <Wrapper>

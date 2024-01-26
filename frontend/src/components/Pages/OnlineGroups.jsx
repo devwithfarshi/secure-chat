@@ -2,7 +2,7 @@ import { Message, Search } from "@mui/icons-material";
 import { Avatar, IconButton } from "@mui/material";
 import React from "react";
 import styled from "styled-components";
-import logo from "../../../public/images/secure_chat_logo.png";
+import logo from "/public/images/secure_chat_logo.png";
 
 const OnlineGroups = () => {
   return (

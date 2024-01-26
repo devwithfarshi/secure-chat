@@ -4,12 +4,14 @@ import { getIPAddress } from "./config/getIpAddress.js";
 import colors from "colors";
 import { mongoDB_connect } from "./config/mongoDB.js";
 import userRouter from "./routes/userRoute.js";
+import cors from "cors";
 dotenv.config();
 const app = express();
 const port = process.env.PORT || 5000;
 
 mongoDB_connect(process.env.MONGODB_URI);
-app.use(json());
+app.use(cors());
+app.use(express.json());
 
 app.use("/api/user", userRouter);
 

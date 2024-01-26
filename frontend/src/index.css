@@ -25,3 +25,9 @@ a {
   text-decoration: none;
   display: inline-block;
 }
+
+/* css of toast */
+.toastBody {
+  font-size: 1.6rem;
+  font-weight: 600;
+}

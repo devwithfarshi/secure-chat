@@ -18,8 +18,9 @@ import {
 } from "@mui/material";
 import ConversationsItem from "./ConversationsItem";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 const Sidebar = () => {
+  const navigate = useNavigate();
   const StyledBadge = styled(Badge)(({ theme }) => ({
     "& .MuiBadge-badge": {
       right: 8,
@@ -43,6 +44,10 @@ const Sidebar = () => {
     setAnchorEl(null);
   };
 
+  const handleLogout = () => {
+    localStorage.removeItem("token");
+    navigate("/");
+  };
   return (
     <div className="sidebar-container">
       {/*============ Siderbar Header Start ========= */}
@@ -99,7 +104,7 @@ const Sidebar = () => {
             sx={{
               fontSize: "1.6rem",
             }}
-            onClick={handleClose}
+            onClick={handleLogout}
           >
             Logout
           </MenuItem>
