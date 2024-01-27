@@ -116,6 +116,20 @@ export const loginController = async (req, res) => {
   }
 };
 
+//myProfile
+
+export const myProfile = async (req, res) => {
+  try {
+    const user = await User.findById(req.user._id).select("-password");
+    res.status(200).send({
+      success: true,
+      user,
+    });
+  } catch (error) {
+    console.log(`myProfile error --> ${error}`);
+  }
+};
+
 // get all users
 export const getAllUsers = async (req, res) => {
   User.find().then((users) => {

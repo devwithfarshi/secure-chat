@@ -1,4 +1,4 @@
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, useNavigate } from "react-router-dom";
 import "./App.css";
 import MainContainer from "./components/MainContainer";
 import Login from "./components/Pages/auth/Login";
@@ -9,7 +9,6 @@ import OnlineUsers from "./components/Pages/OnlineUsers";
 import OnlineGroups from "./components/Pages/OnlineGroups";
 import CreateGroup from "./components/Pages/CreateGroup";
 import PageNotFound from "./components/Pages/PageNotFound";
-import { useEffect } from "react";
 
 function App() {
   return (

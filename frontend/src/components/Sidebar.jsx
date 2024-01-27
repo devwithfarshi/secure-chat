@@ -19,8 +19,11 @@ import {
 import ConversationsItem from "./ConversationsItem";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { logOutUser } from "../reducer/userSlice";
+import { useDispatch } from "react-redux";
 const Sidebar = () => {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
   const StyledBadge = styled(Badge)(({ theme }) => ({
     "& .MuiBadge-badge": {
       right: 8,
@@ -45,7 +48,7 @@ const Sidebar = () => {
   };
 
   const handleLogout = () => {
-    localStorage.removeItem("token");
+    dispatch(logOutUser());
     navigate("/");
   };
   return (
