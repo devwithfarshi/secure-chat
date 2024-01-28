@@ -20,8 +20,9 @@ import ConversationsItem from "./ConversationsItem";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { logOutUser } from "../reducer/userSlice";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 const Sidebar = () => {
+  const { user } = useSelector((state) => state.users);
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const StyledBadge = styled(Badge)(({ theme }) => ({
@@ -67,8 +68,8 @@ const Sidebar = () => {
           {/* We also add change or update profile function */}
           <StyledBadge badgeContent={999} max={9}>
             <Avatar
-              alt="user name"
-              src="https://res.cloudinary.com/dc2lde0cr/image/upload/v1704392044/portfolio/h495i3hfsbb3qrukpe5a.png"
+              alt={user.name}
+              src={user.image}
               sx={{ width: 56, height: 56 }}
             />
           </StyledBadge>
